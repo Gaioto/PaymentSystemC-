@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_paymentContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_payment">
+    <Key>
+      <PropertyRef Name="cd_payment" />
+    </Key>
+    <Property Name="cd_payment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nm_payment" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="vl_payment" Type="Double" Nullable="false" />
+    <Property Name="dt_payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="vl_tax_payment" Type="Double" Nullable="false" />
+    <Property Name="ds_payment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="db_paymentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_payment" EntityType="Self.tb_payment" />
+  </EntityContainer>
+</Schema>

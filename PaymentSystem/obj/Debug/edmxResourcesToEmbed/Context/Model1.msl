@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_paymentContextStoreContainer" CdmEntityContainer="db_paymentEntities">
+    <EntitySetMapping Name="tb_payment">
+      <EntityTypeMapping TypeName="db_paymentContext.tb_payment">
+        <MappingFragment StoreEntitySet="tb_payment">
+          <ScalarProperty Name="cd_payment" ColumnName="cd_payment" />
+          <ScalarProperty Name="nm_payment" ColumnName="nm_payment" />
+          <ScalarProperty Name="vl_payment" ColumnName="vl_payment" />
+          <ScalarProperty Name="dt_payment" ColumnName="dt_payment" />
+          <ScalarProperty Name="vl_tax_payment" ColumnName="vl_tax_payment" />
+          <ScalarProperty Name="ds_payment" ColumnName="ds_payment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

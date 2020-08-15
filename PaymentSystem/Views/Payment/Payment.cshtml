@@ -1,0 +1,59 @@
+﻿@model PaymentSystem.Context.tb_payment
+
+@{
+    ViewBag.Title = "Payment";
+}
+
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+<h2>Payment List</h2>
+
+@using (Html.BeginForm("AddPayment", "Payment", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            @Html.HiddenFor(x => x.cd_payment)
+            <label>Payment Title</label>
+            @Html.ValidationMessageFor(x => x.nm_payment, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.nm_payment, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Payment Value</label>
+            @Html.ValidationMessageFor(x => x.vl_payment, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.vl_payment, new { @class = "form-control", @type = "number" })
+        </div>
+        <div class="form-group">
+            <label>Payment Date</label>
+            @Html.ValidationMessageFor(x => x.dt_payment, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.dt_payment, new { @class = "form-control", @type = "Date" })
+        </div>
+        <div class="form-group">
+            <label>Payment Comment</label>
+            @Html.TextAreaFor(x => x.ds_payment, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("ReadExcel", "Payment", FormMethod.Post, new { enctype = "multipart/form-data"}))
+{
+    <div class="container">
+        <div class="form-group">
+            @Html.Raw(ViewBag.Error)
+            <input type="file" name="excelFile" value="Excel File...">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">ReadFile</button>
+        </div>
+    </div>
+
+}

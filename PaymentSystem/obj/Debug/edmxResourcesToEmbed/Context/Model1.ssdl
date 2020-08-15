@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_paymentContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_payment">
+    <Key>
+      <PropertyRef Name="cd_payment" />
+    </Key>
+    <Property Name="cd_payment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nm_payment" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="vl_payment" Type="float" Nullable="false" />
+    <Property Name="dt_payment" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="vl_tax_payment" Type="float" Nullable="false" />
+    <Property Name="ds_payment" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="db_paymentContextStoreContainer">
+    <EntitySet Name="tb_payment" EntityType="Self.tb_payment" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
